@@ -26,15 +26,16 @@ mongo = PyMongo(app)
 ############################
 
 
+mars = {'text':'hi there'}
 
 # Route to render index.html template using data from Mongo
 @app.route("/")
 def home():
 
     # Find one record of data from the mongo database
-    #mars = mongo.sample_mflix.comments.find_one()
+    mars = mongo.sample_mflix.comments.find_one()
     # Return template and data
-    mars = {'text':'hi there'}
+
     return render_template("index.html", mars=mars)
 
 # Route that will trigger the scrape function
@@ -48,6 +49,7 @@ def scrape():
     #mongo.db.collection.drop()
     
     mars_data = "hello world"
+    mars = {'text':'well hello to you, too'}
     #mongo.sample_mflix.comments.update({}, mars_data, upsert=True)
 
     # Redirect back to home page
