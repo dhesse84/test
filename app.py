@@ -4,7 +4,7 @@ from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 import scrape_mars
 
-from flask.ext import restful
+from flask import restful
 from flask import make_response
 from bson.json_util import dumps
 
