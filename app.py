@@ -1,14 +1,30 @@
+import os
+
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 import scrape_mars
 
+from flask.ext import restful
+from flask import make_response
+from bson.json_util import dumps
+
+
+########################
+MONGO_URL = os.environ.get('MONGO_URL')
+#if not MONGO_URL:
+#    MONGO_URL = "mongodb://localhost:27017/rest";
+
 # Create an instance of Flask
 app = Flask(__name__)
 
-# Use PyMongo to establish Mongo connection
+app.config['MONGO_URI'] = MONGO_URL
 
+# Use PyMongo to establish Mongo connection
 #mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
-mongo = PyMongo(app, uri-"mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true&w=majority"
+mongo = PyMongo(app)
+############################
+
+
 
 # Route to render index.html template using data from Mongo
 @app.route("/")
@@ -24,11 +40,12 @@ def home():
 def scrape():
 
     # Run the scrape function
-    mars_data = scrape_mars.scrape_info()  #codefile.def_name()
+    #mars_data = scrape_mars.scrape_info()  #codefile.def_name()
 
     #Drops collection if available to remove duplicates
-    mongo.db.collection.drop()
+    #mongo.db.collection.drop()
     
+    mars_data = "hello world"
     mongo.db.collection.update({}, mars_data, upsert=True)
 
     # Redirect back to home page
