@@ -12,13 +12,13 @@ import scrape_mars
 ########################
 #MONGO_URL = os.environ.get('MONGO_URL')
 #if not MONGO_URL:
-#    MONGO_URL = "mongodb://localhost:27017/rest";
-MONGO_URL = mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true
+#    MONGO_URL = "mongodb://localhost:27017/rest"
 
 # Create an instance of Flask
 app = Flask(__name__)
 
-app.config['MONGO_URI'] = MONGO_URL
+#app.config['MONGO_URI'] = MONGO_URL
+app.config['MONGO_URI'] = 'mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true'
 
 # Use PyMongo to establish Mongo connection
 #mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
