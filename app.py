@@ -34,6 +34,7 @@ def home():
     # Find one record of data from the mongo database
     #mars = mongo.sample_mflix.comments.find_one()
     # Return template and data
+    mars = {'text':'hi there'}
     return render_template("index.html", mars=mars)
 
 # Route that will trigger the scrape function
