@@ -4,15 +4,16 @@ from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 import scrape_mars
 
-from flask import restful
-from flask import make_response
-from bson.json_util import dumps
+#from flask import restful
+#from flask import make_response
+#from bson.json_util import dumps
 
 
 ########################
-MONGO_URL = os.environ.get('MONGO_URL')
+#MONGO_URL = os.environ.get('MONGO_URL')
 #if not MONGO_URL:
 #    MONGO_URL = "mongodb://localhost:27017/rest";
+MONGO_URL = mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true
 
 # Create an instance of Flask
 app = Flask(__name__)
