@@ -23,10 +23,10 @@ app = Flask(__name__)
 
 
 #mongo = pymongo.MongoClient('mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true', maxPoolSize=50, connect=False)
-mongo = pymongo.MongoClient('mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/', retryWrites=True, maxPoolSize=50, connect=False)
-
-db = pymongo.database.Database(mongo, 'sample_mflix')
-col = pymongo.collection.Collection(db, 'comments')
+#mongo = pymongo.MongoClient('mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/', retryWrites=True, maxPoolSize=50, connect=False)
+mongo = PyMongo(app, uri='mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/')
+#db = mongo.database.Database(mongo, 'sample_mflix')
+#col = mongo.collection.Collection(db, 'comments')
 
 mars = {'text':'hi there'}
 
@@ -36,8 +36,8 @@ def home():
     #mars = db.col.find_one()    
     #col_results = json.loads(dumps(col.find().limit(5)))
     #mars = list(col_results)
-    mars = json.loads(dumps(db.col.find_one()))
-
+    #mars = json.loads(dumps(db.col.find_one()))
+    mars = json.loads(dumps(mongo.sample_mflix.comments.find_one()))
     return render_template("index.html", mars=mars)
 
 ###########
