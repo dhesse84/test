@@ -30,8 +30,7 @@ col = pymongo.collection.Collection(db, 'comments')
 
 mars = {'text':'hi there'}
 
-#@app.route('/', methods=['GET', 'POST', 'OPTIONS'])
-@app.route('/')
+@app.route('/', methods=['GET', 'POST', 'OPTIONS'])
 def home():
     """Landing page."""
     #mars = db.col.find_one()    
