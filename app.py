@@ -1,42 +1,67 @@
-import os
+#import os
 
-from flask import Flask, render_template, redirect
-from flask_pymongo import PyMongo
-import scrape_mars
+#from flask import Flask, render_template, redirect
+#from flask_pymongo import PyMongo
+#import scrape_mars
 
 #from flask import restful
 #from flask import make_response
 #from bson.json_util import dumps
 
+############
+import pymongo
+import json
+from bson.json_util import dumps
+from flask import Flask, render_template, Markup, request, redirect
+import requests
+#from flask_static_compress import FlaskStaticCompress
+#import logging
+
+
+# Create an instance of Flask
+app = Flask(__name__)
+
+
+mongo = pymongo.MongoClient('mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true', maxPoolSize=50, connect=False)
+
+db = pymongo.database.Database(mongo, 'test')
+col = pymongo.collection.Collection(db, 'sample_mflix')
+
+mars = {'text':'hi there'}
+
+@app.route('/', methods=['GET', 'POST', 'OPTIONS'])
+def home():
+    """Landing page."""
+    #mars = db.col.find_one()    
+    col_results = json.loads(dumps(col.find().limit(5)))
+    mars = list(col_results)
+
+    return render_template("index.html", mars=mars)
+
+###########
 
 ########################
 #MONGO_URL = os.environ.get('MONGO_URL')
 #if not MONGO_URL:
 #    MONGO_URL = "mongodb://localhost:27017/rest"
 
-# Create an instance of Flask
-app = Flask(__name__)
 
-#app.config['MONGO_URI'] = MONGO_URL
-app.config['MONGO_URI'] = 'mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true'
+#app.config['MONGO_URI'] = 'mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true'
+
+#client = pymongo.MongoClient('mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true')
 
 # Use PyMongo to establish Mongo connection
 #mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
-mongo = PyMongo(app)
+#mongo = PyMongo(app)
+#db = mongo[sample_mflix]
 ############################
 
 
-mars = {'text':'hi there'}
+
 
 # Route to render index.html template using data from Mongo
-@app.route("/")
-def home():
 
-    # Find one record of data from the mongo database
-    mars = mongo.sample_mflix.comments.find_one()
-    # Return template and data
 
-    return render_template("index.html", mars=mars)
 
 # Route that will trigger the scrape function
 @app.route("/scrape")
