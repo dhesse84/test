@@ -36,6 +36,7 @@ def home():
     #mars = db.col.find_one()    
     #col_results = json.loads(dumps(col.find().limit(5)))
     #mars = list(col_results)
+    mars = json.loads(dumps(db.col.find_one()))
 
     return render_template("index.html", mars=mars)
 
