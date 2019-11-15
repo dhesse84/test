@@ -22,10 +22,11 @@ import requests
 app = Flask(__name__)
 
 
-mongo = pymongo.MongoClient('mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true', maxPoolSize=50, connect=False)
+#mongo = pymongo.MongoClient('mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true', maxPoolSize=50, connect=False)
+mongo = pymongo.MongoClient('mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true')
 
-db = pymongo.database.Database(mongo, 'test')
-col = pymongo.collection.Collection(db, 'sample_mflix')
+db = pymongo.database.Database(mongo, 'sample_mflix')
+col = pymongo.collection.Collection(db, 'comments')
 
 mars = {'text':'hi there'}
 
