@@ -29,7 +29,8 @@ col = pymongo.collection.Collection(db, 'sample_mflix')
 
 mars = {'text':'hi there'}
 
-@app.route('/', methods=['GET', 'POST', 'OPTIONS'])
+#@app.route('/', methods=['GET', 'POST', 'OPTIONS'])
+@app.route('/')
 def home():
     """Landing page."""
     #mars = db.col.find_one()    
