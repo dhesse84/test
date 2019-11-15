@@ -79,7 +79,7 @@ def scrape():
     #mongo.sample_mflix.comments.update({}, mars_data, upsert=True)
 
     # Redirect back to home page
-    return redirect("/")
+    return render_template("index.html", mars=mars)
 
 if __name__ == "__main__":
     app.run(debug=True)
