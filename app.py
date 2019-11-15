@@ -23,7 +23,7 @@ app = Flask(__name__)
 
 
 #mongo = pymongo.MongoClient('mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true', maxPoolSize=50, connect=False)
-mongo = pymongo.MongoClient('mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test', retryWrites=True, maxPoolSize=50, connect=False)
+mongo = pymongo.MongoClient('mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/', retryWrites=True, maxPoolSize=50, connect=False)
 
 db = pymongo.database.Database(mongo, 'sample_mflix')
 col = pymongo.collection.Collection(db, 'comments')
@@ -34,8 +34,8 @@ mars = {'text':'hi there'}
 def home():
     """Landing page."""
     #mars = db.col.find_one()    
-    col_results = json.loads(dumps(col.find().limit(5)))
-    mars = list(col_results)
+    #col_results = json.loads(dumps(col.find().limit(5)))
+    #mars = list(col_results)
 
     return render_template("index.html", mars=mars)
 
