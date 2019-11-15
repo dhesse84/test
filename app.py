@@ -23,7 +23,7 @@ app = Flask(__name__)
 
 
 #mongo = pymongo.MongoClient('mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true', maxPoolSize=50, connect=False)
-mongo = pymongo.MongoClient('mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/sample_mflix', retryWrites=true, maxPoolSize=50, connect=False)
+mongo = pymongo.MongoClient('mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/sample_mflix', retryWrites=True, maxPoolSize=50, connect=False)
 
 db = pymongo.database.Database(mongo, 'sample_mflix')
 col = pymongo.collection.Collection(db, 'comments')
