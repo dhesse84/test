@@ -23,7 +23,7 @@ mars = {'text':'hi there'}
 def home():
     """Landing page."""
     #mars = json.loads(dumps(mongo.sample_mflix.comments.find_one()))
-    query = {name:"Joshua Kent"}
+    query = {"name":"Joshua Kent"}
     mars = json.loads(dumps(mongo.sample_mflix.comments.find(query)))
     return render_template("index.html", mars=mars)
 
