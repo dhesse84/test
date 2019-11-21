@@ -1,6 +1,7 @@
 function plistsetup() {
   var selector = d3.select("#sel_div");
 
+  $("#sel_div").prepend("<option value='' selected='selected'>(Select one)</option>");
    d3.json(`/setup`).then((aaa) => {
       aaa.forEach((x) => {
         selector
@@ -33,7 +34,8 @@ function barsearch() {
       const marginBar = 80;
       var widthBar = svgWidth - marginBar;
       var heightBar = svgHeight - marginBar;
-        
+
+
         const svgBar = d3.select("#bar-chart")
           .append("svg")
           .attr("height",svgHeight)
@@ -60,7 +62,12 @@ function barsearch() {
 
         chart.append('g')
           .attr('transform', `translate(0,${heightBar})`)
-          .call(d3.axisBottom(xScale));
+          .call(d3.axisBottom(xScale))
+          .selectAll("text")
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", "rotate(-45)")
 
         chart.append('g')
           .call(d3.axisLeft(yScale));
@@ -106,7 +113,7 @@ function barsearch() {
           .attr('x', widthBar / 2)
           .attr('y', 20)
           .attr('text-anchor', 'middle')
-          .text('Presidential Word Count')
+          .text(`Usage frequency of "${js_search_word}"`)
 
     }); //end of d3 promise
   }; //end of function
@@ -216,16 +223,28 @@ function docsearch() {
 
 
 
-
 // jQuery script
 $(document).ready(function(){
   $("div.docsList table").delegate('tr', 'click', function() {
       var currentRow=$(this).closest("tr"); // get the current row
-      var js_filepath=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
-      alert(js_filepath);
+      var fp1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+      var fp2=currentRow.find("td:eq(2)").text();
+      var js_filepath = fp1.concat('/', fp2, '.txt')
 
-      $("#fulltext").append('got here.')
-  });
+
+      $.ajax({
+        url : js_filepath,
+        dataType: "text",
+        success : function (data) {
+            //$(".gfg").html(data);
+            // var text = d3.select(".gfg").select("p");
+            // text.html("")
+            document.getElementById("fulltext").innerHTML = ""
+            $("#fulltext").append(`${data}`)
+        }
+      });
+
+    });
 
   //  $("tr:not(:has(th))").mouseover(function () {
   //      $(this).addClass("hover");
