@@ -23,8 +23,8 @@ import heapq
 
 # Create an instance of Flask
 app = Flask(__name__)
-#MONGO_URL = os.environ.get('MONGO_URL')
-MONGO_URL = "mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true&w=majority"
+MONGO_URL = os.environ.get('MONGO_URL')
+#MONGO_URL = "mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true&w=majority"
 myclient = pymongo.MongoClient(MONGO_URL, maxPoolSize=50, connect=True)
 #mongo = pymongo.MongoClient('mongodb+srv://danh:pJmVMOcSjYNZ87rt@cluster0-zhzxw.mongodb.net/test?retryWrites=true&w=majority', maxPoolSize=50, connect=True)
 
