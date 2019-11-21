@@ -1,0 +1,46 @@
+﻿_dir,president,number,term_begin,term_end
+[001]washington,George Washington,001,04/30/1789,03/04/1797
+[002]adams,John Adams,002,03/04/1797,03/04/1801
+[003]jefferson,Thomas Jefferson,003,03/04/1801,03/04/1809
+[004]madison,James Madison,004,03/04/1809,03/04/1817
+[005]monroe,James Monroe,005,03/04/1817,03/04/1825
+[006]jqadams,John Quincy Adams,006,03/04/1825,03/04/1829
+[007]jackson,Andrew Jackson,007,03/04/1829,03/04/1837
+[008]vanburen,Martin Van Buren,008,03/04/1837,03/04/1841
+[009]harrison,William Henry Harrison,009,03/04/1841,04/04/1841
+[010]tyler,John Tyler,010,04/04/1841,03/04/1845
+[011]polk,James K. Polk,011,03/04/1845,03/04/1849
+[012]taylor,Zachary Taylor,012,03/04/1849,07/09/1850
+[013]fillmore,Millard Fillmore,013,07/09/1850,03/04/1853
+[014]pierce,Franklin Pierce,014,03/04/1853,03/04/1857
+[015]buchanan,James Buchanan,015,03/04/1857,03/04/1861
+[016]lincoln,Abraham Lincoln,016,03/04/1861,04/15/1865
+[017]johnson,Andrew Johnson,017,04/15/1865,03/04/1869
+[018]grant,Ulysses S. Grant,018,03/04/1869,03/04/1877
+[019]hayes,Rutherford B. Hayes,019,03/04/1877,03/04/1881
+[020]garfield,James Garfield,020,03/04/1881,09/19/1881
+[021]arthur,Chester Arthur,021,09/19/1881,03/04/1885
+[022]cleveland,Grover Cleveland,022,03/04/1885,03/04/1889
+[023]bharrison,Benjamin Harrison,023,03/04/1889,03/04/1893
+[024]cleveland,Grover Cleveland,024,03/04/1893,03/04/1897
+[025]mckinley,William McKinley,025,03/04/1897,09/14/1901
+[026]roosevelt,Theodore Roosevelt,026,09/14/1901,03/04/1909
+[027]taft,William Howard Taft,027,03/04/1909,03/04/1913
+[028]wilson,Woodrow Wilson,028,03/04/1913,03/04/1921
+[029]harding,Warren G. Harding,029,03/04/1921,08/02/1923
+[030]coolidge,Calvin Coolidge,030,08/02/1923,03/04/1929
+[031]hoover,Herbert Hoover,031,03/04/1929,03/04/1933
+[032]fdroosevelt,Franklin D. Roosevelt,032,03/04/1933,04/12/1945
+[033]truman,Harry S. Truman,033,04/12/1945,01/20/1953
+[034]eisenhower,Dwight Eisenhower,034,01/20/1953,01/20/1961
+[035]kennedy,John F. Kennedy,035,01/20/1961,11/22/1963
+[036]lbjohnson,Lyndon B. Johnson,036,11/22/1963,01/20/1969
+[037]nixon,Richard Nixon,037,01/20/1969,08/09/1974
+[038]ford,Gerald Ford,038,08/09/1974,01/20/1977
+[039]carter,Jimmy Carter,039,01/20/1977,01/20/1981
+[040]reagan,Ronald Reagan,040,01/20/1981,01/20/1989
+[041]bush,George Bush,041,01/20/1989,01/20/1993
+[042]clinton,Bill Clinton,042,01/20/1993,01/20/2001
+[043]gwbush,George W. Bush,043,01/20/2001,01/20/2009
+[044]obama,Barack Obama,044,01/20/2009,01/20/2017
+[045]trump,Donald Trump,045,01/20/2017,PRESENT
